@@ -3,19 +3,23 @@ package principal;
 import java.io.Serializable;
 
 public class Packet implements Serializable {
-	private int timestamp;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private long timestamp;
 	private int sender; 
 	
 	public int getSender() {
 		return sender;
 	}
 
-	public Packet(int _timestamp, int _sender){
+	public Packet(long _timestamp, int _sender){
 		this.sender = _sender;
 		this.timestamp = _timestamp;
 	}
 	
-	public int getTimestamp() {
+	public long getTimestamp() {
 		return timestamp;
 	}
 }

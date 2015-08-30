@@ -1,16 +1,24 @@
 package principal;
 
+public class Main {
 
-public class main {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Thread t1 = new Thread(new Host(0,3));
-		Thread t2 = new Thread(new Host(1, 3));
-		Thread t3 = new Thread(new Host(2,3));
+	public static void main(String[] args) throws InterruptedException {
+		Host h1 = new Host(0,3);
+		Host h2 = new Host(1,3);
+		Host h3 = new Host(2,3);
+		Thread t1 = new Thread(h1);
+		Thread t2 = new Thread(h2);
+		Thread t3 = new Thread(h3);
 		t1.start();
 		t2.start();
 		t3.start();
+		t1.join();
+		t2.join();
+		t3.join();
+		h1.print();
+		h2.print();
+		h3.print();
+
 	}
 
 }

@@ -9,7 +9,7 @@ public class OrderPacketByTimestamp implements Comparator<Packet> {
 	
 	@Override
 	public int compare(Packet p1, Packet p2){
-		return Integer.valueOf(p1.getTimestamp()).compareTo(p2.getTimestamp());
+		return Long.valueOf(p1.getTimestamp()).compareTo(p2.getTimestamp());
 	}
 	
 	@Override
